@@ -41,6 +41,26 @@ Ext.define('Model.view.user.UserForm',{
         store: {
             type: 'user'
         },
+    },
+    {
+        xtype:'button',
+        text: 'Change name',
+        handler: function() {
+            var formpanel = this.up('formpanel');
+            var store = Ext.getStore('user')
+            var values = formpanel.getValues();
+            var userName = values.user;
+            console.log(store)
+            var users  = store.getData().items
+            users.forEach(function (u) {
+                if (u.data.name == userName) {
+                    console.log("Update " + userName)
+                    u.changeName()
+
+                }
+            })
+            
+        }
     }
     ]
 

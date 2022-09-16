@@ -11,7 +11,7 @@ Ext.define('Model.model.User', {
     ],
     changeName : function() {
         var oldName = this.get('name');
-        newName = oldName + 'Nuovo';
+        newName = oldName + ' Updated ! ';
         this.set('name', newName);
     }
 });
